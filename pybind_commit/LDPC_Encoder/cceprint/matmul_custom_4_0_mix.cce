@@ -1,0 +1,302 @@
+extern "C" __global__ [aicore] void matmul_custom(__gm__ uint8_t* __restrict__ arg0, __gm__ uint8_t* __restrict__ arg1, __gm__ uint8_t* __restrict__ arg2, __gm__ uint8_t* __restrict__ arg3, __gm__ uint8_t* __restrict__ arg4) {
+set_ffts_base_addr((uint64_t)0xe7ffdbcce6a0);
+set_atomic_none();
+#error "sff0 NO PROCESS RETURN VALUE"
+#error "sbitset1 NO PROCESS RETURN VALUE"
+#error "sff0 NO PROCESS RETURN VALUE"
+#error "sbitset1 NO PROCESS RETURN VALUE"
+set_flag((pipe_t)PIPE_M, (pipe_t)PIPE_MTE1, (event_t)0);
+set_flag((pipe_t)PIPE_M, (pipe_t)PIPE_MTE1, (event_t)1);
+create_cbuf_matrix((__cbuf__ void*)0xe7ffd5465010, (int64_t)56, (half)0);
+pipe_barrier((pipe_t)PIPE_MTE2);
+copy_gm_to_cbuf((__cbuf__ void*)0xe7ffd5465010, (__gm__ void*)(((uint64_t)arg0) + 0x67000), (uint8_t)0, (uint16_t)103, (uint16_t)1, (uint16_t)31, (uint16_t)0, (pad_t)0);
+copy_gm_to_cbuf((__cbuf__ void*)0xe7ffd5465e10, (__gm__ void*)(((uint64_t)arg0) + 0x67020), (uint8_t)0, (uint16_t)103, (uint16_t)1, (uint16_t)31, (uint16_t)0, (pad_t)0);
+copy_gm_to_cbuf((__cbuf__ void*)0xe7ffd5466c10, (__gm__ void*)(((uint64_t)arg0) + 0x67040), (uint8_t)0, (uint16_t)103, (uint16_t)1, (uint16_t)31, (uint16_t)0, (pad_t)0);
+copy_gm_to_cbuf((__cbuf__ void*)0xe7ffd5467a10, (__gm__ void*)(((uint64_t)arg0) + 0x67060), (uint8_t)0, (uint16_t)103, (uint16_t)1, (uint16_t)31, (uint16_t)0, (pad_t)0);
+copy_gm_to_cbuf((__cbuf__ void*)0xe7ffd5468810, (__gm__ void*)(((uint64_t)arg0) + 0x67080), (uint8_t)0, (uint16_t)103, (uint16_t)1, (uint16_t)31, (uint16_t)0, (pad_t)0);
+copy_gm_to_cbuf((__cbuf__ void*)0xe7ffd5469610, (__gm__ void*)(((uint64_t)arg0) + 0x670a0), (uint8_t)0, (uint16_t)103, (uint16_t)1, (uint16_t)31, (uint16_t)0, (pad_t)0);
+copy_gm_to_cbuf((__cbuf__ void*)0xe7ffd546a410, (__gm__ void*)(((uint64_t)arg0) + 0x670c0), (uint8_t)0, (uint16_t)103, (uint16_t)1, (uint16_t)31, (uint16_t)0, (pad_t)0);
+copy_gm_to_cbuf((__cbuf__ void*)0xe7ffd546b210, (__gm__ void*)(((uint64_t)arg0) + 0x670e0), (uint8_t)0, (uint16_t)103, (uint16_t)1, (uint16_t)31, (uint16_t)0, (pad_t)0);
+#error "sff0 NO PROCESS RETURN VALUE"
+set_flag((pipe_t)PIPE_MTE2, (pipe_t)PIPE_MTE1, (event_t)0);
+wait_flag((pipe_t)PIPE_MTE2, (pipe_t)PIPE_MTE1, (event_t)0);
+#error "sff0 NO PROCESS RETURN VALUE"
+#error "sbitset1 NO PROCESS RETURN VALUE"
+set_flag((pipe_t)PIPE_MTE3, (pipe_t)PIPE_MTE1, (event_t)0);
+wait_flag((pipe_t)PIPE_MTE3, (pipe_t)PIPE_MTE1, (event_t)0);
+#error "sbitset0 NO PROCESS RETURN VALUE"
+copy_gm_to_cbuf((__cbuf__ void*)0xe7ffd5481010, (__gm__ void*)arg1, (uint8_t)0, (uint16_t)128, (uint16_t)1, (uint16_t)0, (uint16_t)0, (pad_t)0);
+#error "sff0 NO PROCESS RETURN VALUE"
+set_flag((pipe_t)PIPE_MTE2, (pipe_t)PIPE_MTE1, (event_t)0);
+wait_flag((pipe_t)PIPE_MTE2, (pipe_t)PIPE_MTE1, (event_t)0);
+#error "sff0 NO PROCESS RETURN VALUE"
+#error "sbitset1 NO PROCESS RETURN VALUE"
+set_flag((pipe_t)PIPE_MTE3, (pipe_t)PIPE_MTE1, (event_t)0);
+wait_flag((pipe_t)PIPE_MTE3, (pipe_t)PIPE_MTE1, (event_t)0);
+#error "sbitset0 NO PROCESS RETURN VALUE"
+wait_flag((pipe_t)PIPE_M, (pipe_t)PIPE_MTE1, (event_t)0);
+set_fmatrix((uint64_t)0x10070);
+img2colv2_cbuf_to_ca((__ca__ half*)0xaaaafe333da0, (__cbuf__ half*)0xe7ffd5465010, (uint16_t)128, (uint16_t)112, (uint16_t)0, (uint16_t)0, (uint8_t)1, (uint8_t)1, (uint8_t)1, (uint8_t)1, (uint8_t)1, (uint8_t)1, (bool)0, (uint16_t)128);
+set_fmatrix((uint64_t)0x10080);
+img2colv2_cbuf_to_cb((__cb__ half*)0xaaaafe343db0, (__cbuf__ half*)0xe7ffd5481010, (uint16_t)16, (uint16_t)128, (uint16_t)0, (uint16_t)0, (uint8_t)1, (uint8_t)1, (uint8_t)1, (uint8_t)1, (uint8_t)1, (uint8_t)1, (bool)0, (uint16_t)16);
+set_flag((pipe_t)PIPE_MTE1, (pipe_t)PIPE_M, (event_t)0);
+wait_flag((pipe_t)PIPE_MTE1, (pipe_t)PIPE_M, (event_t)0);
+mad((__cc__ float*)0xe7ffd5424010, (__ca__ half*)0xaaaafe333da0, (__cb__ half*)0xaaaafe343db0, (uint16_t)103, (uint16_t)128, (uint16_t)16, (bool)1);
+pipe_barrier((pipe_t)PIPE_M);
+set_flag((pipe_t)PIPE_M, (pipe_t)PIPE_MTE1, (event_t)0);
+create_cbuf_matrix((__cbuf__ void*)0xe7ffd546c010, (int64_t)56, (half)0);
+pipe_barrier((pipe_t)PIPE_MTE2);
+copy_gm_to_cbuf((__cbuf__ void*)0xe7ffd546c010, (__gm__ void*)(((uint64_t)arg0) + 0x67100), (uint8_t)0, (uint16_t)103, (uint16_t)1, (uint16_t)31, (uint16_t)0, (pad_t)0);
+copy_gm_to_cbuf((__cbuf__ void*)0xe7ffd546ce10, (__gm__ void*)(((uint64_t)arg0) + 0x67120), (uint8_t)0, (uint16_t)103, (uint16_t)1, (uint16_t)31, (uint16_t)0, (pad_t)0);
+copy_gm_to_cbuf((__cbuf__ void*)0xe7ffd546dc10, (__gm__ void*)(((uint64_t)arg0) + 0x67140), (uint8_t)0, (uint16_t)103, (uint16_t)1, (uint16_t)31, (uint16_t)0, (pad_t)0);
+copy_gm_to_cbuf((__cbuf__ void*)0xe7ffd546ea10, (__gm__ void*)(((uint64_t)arg0) + 0x67160), (uint8_t)0, (uint16_t)103, (uint16_t)1, (uint16_t)31, (uint16_t)0, (pad_t)0);
+copy_gm_to_cbuf((__cbuf__ void*)0xe7ffd546f810, (__gm__ void*)(((uint64_t)arg0) + 0x67180), (uint8_t)0, (uint16_t)103, (uint16_t)1, (uint16_t)31, (uint16_t)0, (pad_t)0);
+copy_gm_to_cbuf((__cbuf__ void*)0xe7ffd5470610, (__gm__ void*)(((uint64_t)arg0) + 0x671a0), (uint8_t)0, (uint16_t)103, (uint16_t)1, (uint16_t)31, (uint16_t)0, (pad_t)0);
+copy_gm_to_cbuf((__cbuf__ void*)0xe7ffd5471410, (__gm__ void*)(((uint64_t)arg0) + 0x671c0), (uint8_t)0, (uint16_t)103, (uint16_t)1, (uint16_t)31, (uint16_t)0, (pad_t)0);
+copy_gm_to_cbuf((__cbuf__ void*)0xe7ffd5472210, (__gm__ void*)(((uint64_t)arg0) + 0x671e0), (uint8_t)0, (uint16_t)103, (uint16_t)1, (uint16_t)31, (uint16_t)0, (pad_t)0);
+#error "sff0 NO PROCESS RETURN VALUE"
+set_flag((pipe_t)PIPE_MTE2, (pipe_t)PIPE_MTE1, (event_t)0);
+wait_flag((pipe_t)PIPE_MTE2, (pipe_t)PIPE_MTE1, (event_t)0);
+#error "sff0 NO PROCESS RETURN VALUE"
+#error "sbitset1 NO PROCESS RETURN VALUE"
+set_flag((pipe_t)PIPE_MTE3, (pipe_t)PIPE_MTE1, (event_t)0);
+wait_flag((pipe_t)PIPE_MTE3, (pipe_t)PIPE_MTE1, (event_t)0);
+#error "sbitset0 NO PROCESS RETURN VALUE"
+copy_gm_to_cbuf((__cbuf__ void*)0xe7ffd5482010, (__gm__ void*)(((uint64_t)arg1) + 0x1000), (uint8_t)0, (uint16_t)128, (uint16_t)1, (uint16_t)0, (uint16_t)0, (pad_t)0);
+#error "sff0 NO PROCESS RETURN VALUE"
+set_flag((pipe_t)PIPE_MTE2, (pipe_t)PIPE_MTE1, (event_t)0);
+wait_flag((pipe_t)PIPE_MTE2, (pipe_t)PIPE_MTE1, (event_t)0);
+#error "sff0 NO PROCESS RETURN VALUE"
+#error "sbitset1 NO PROCESS RETURN VALUE"
+set_flag((pipe_t)PIPE_MTE3, (pipe_t)PIPE_MTE1, (event_t)0);
+wait_flag((pipe_t)PIPE_MTE3, (pipe_t)PIPE_MTE1, (event_t)0);
+#error "sbitset0 NO PROCESS RETURN VALUE"
+wait_flag((pipe_t)PIPE_M, (pipe_t)PIPE_MTE1, (event_t)1);
+set_fmatrix((uint64_t)0x10070);
+img2colv2_cbuf_to_ca((__ca__ half*)0xaaaafe33bda0, (__cbuf__ half*)0xe7ffd546c010, (uint16_t)128, (uint16_t)112, (uint16_t)0, (uint16_t)0, (uint8_t)1, (uint8_t)1, (uint8_t)1, (uint8_t)1, (uint8_t)1, (uint8_t)1, (bool)0, (uint16_t)128);
+set_fmatrix((uint64_t)0x10080);
+img2colv2_cbuf_to_cb((__cb__ half*)0xaaaafe34bdb0, (__cbuf__ half*)0xe7ffd5482010, (uint16_t)16, (uint16_t)128, (uint16_t)0, (uint16_t)0, (uint8_t)1, (uint8_t)1, (uint8_t)1, (uint8_t)1, (uint8_t)1, (uint8_t)1, (bool)0, (uint16_t)16);
+set_flag((pipe_t)PIPE_MTE1, (pipe_t)PIPE_M, (event_t)1);
+wait_flag((pipe_t)PIPE_MTE1, (pipe_t)PIPE_M, (event_t)1);
+mad((__cc__ float*)0xe7ffd5424010, (__ca__ half*)0xaaaafe33bda0, (__cb__ half*)0xaaaafe34bdb0, (uint16_t)103, (uint16_t)128, (uint16_t)16, (bool)0);
+pipe_barrier((pipe_t)PIPE_M);
+set_flag((pipe_t)PIPE_M, (pipe_t)PIPE_MTE1, (event_t)1);
+create_cbuf_matrix((__cbuf__ void*)0xe7ffd5473010, (int64_t)56, (half)0);
+pipe_barrier((pipe_t)PIPE_MTE2);
+copy_gm_to_cbuf((__cbuf__ void*)0xe7ffd5473010, (__gm__ void*)(((uint64_t)arg0) + 0x67200), (uint8_t)0, (uint16_t)103, (uint16_t)1, (uint16_t)31, (uint16_t)0, (pad_t)0);
+copy_gm_to_cbuf((__cbuf__ void*)0xe7ffd5473e10, (__gm__ void*)(((uint64_t)arg0) + 0x67220), (uint8_t)0, (uint16_t)103, (uint16_t)1, (uint16_t)31, (uint16_t)0, (pad_t)0);
+copy_gm_to_cbuf((__cbuf__ void*)0xe7ffd5474c10, (__gm__ void*)(((uint64_t)arg0) + 0x67240), (uint8_t)0, (uint16_t)103, (uint16_t)1, (uint16_t)31, (uint16_t)0, (pad_t)0);
+copy_gm_to_cbuf((__cbuf__ void*)0xe7ffd5475a10, (__gm__ void*)(((uint64_t)arg0) + 0x67260), (uint8_t)0, (uint16_t)103, (uint16_t)1, (uint16_t)31, (uint16_t)0, (pad_t)0);
+copy_gm_to_cbuf((__cbuf__ void*)0xe7ffd5476810, (__gm__ void*)(((uint64_t)arg0) + 0x67280), (uint8_t)0, (uint16_t)103, (uint16_t)1, (uint16_t)31, (uint16_t)0, (pad_t)0);
+copy_gm_to_cbuf((__cbuf__ void*)0xe7ffd5477610, (__gm__ void*)(((uint64_t)arg0) + 0x672a0), (uint8_t)0, (uint16_t)103, (uint16_t)1, (uint16_t)31, (uint16_t)0, (pad_t)0);
+copy_gm_to_cbuf((__cbuf__ void*)0xe7ffd5478410, (__gm__ void*)(((uint64_t)arg0) + 0x672c0), (uint8_t)0, (uint16_t)103, (uint16_t)1, (uint16_t)31, (uint16_t)0, (pad_t)0);
+copy_gm_to_cbuf((__cbuf__ void*)0xe7ffd5479210, (__gm__ void*)(((uint64_t)arg0) + 0x672e0), (uint8_t)0, (uint16_t)103, (uint16_t)1, (uint16_t)31, (uint16_t)0, (pad_t)0);
+#error "sff0 NO PROCESS RETURN VALUE"
+set_flag((pipe_t)PIPE_MTE2, (pipe_t)PIPE_MTE1, (event_t)0);
+wait_flag((pipe_t)PIPE_MTE2, (pipe_t)PIPE_MTE1, (event_t)0);
+#error "sff0 NO PROCESS RETURN VALUE"
+#error "sbitset1 NO PROCESS RETURN VALUE"
+set_flag((pipe_t)PIPE_MTE3, (pipe_t)PIPE_MTE1, (event_t)0);
+wait_flag((pipe_t)PIPE_MTE3, (pipe_t)PIPE_MTE1, (event_t)0);
+#error "sbitset0 NO PROCESS RETURN VALUE"
+copy_gm_to_cbuf((__cbuf__ void*)0xe7ffd5483010, (__gm__ void*)(((uint64_t)arg1) + 0x2000), (uint8_t)0, (uint16_t)128, (uint16_t)1, (uint16_t)0, (uint16_t)0, (pad_t)0);
+#error "sff0 NO PROCESS RETURN VALUE"
+set_flag((pipe_t)PIPE_MTE2, (pipe_t)PIPE_MTE1, (event_t)0);
+wait_flag((pipe_t)PIPE_MTE2, (pipe_t)PIPE_MTE1, (event_t)0);
+#error "sff0 NO PROCESS RETURN VALUE"
+#error "sbitset1 NO PROCESS RETURN VALUE"
+set_flag((pipe_t)PIPE_MTE3, (pipe_t)PIPE_MTE1, (event_t)0);
+wait_flag((pipe_t)PIPE_MTE3, (pipe_t)PIPE_MTE1, (event_t)0);
+#error "sbitset0 NO PROCESS RETURN VALUE"
+wait_flag((pipe_t)PIPE_M, (pipe_t)PIPE_MTE1, (event_t)0);
+set_fmatrix((uint64_t)0x10070);
+img2colv2_cbuf_to_ca((__ca__ half*)0xaaaafe333da0, (__cbuf__ half*)0xe7ffd5473010, (uint16_t)128, (uint16_t)112, (uint16_t)0, (uint16_t)0, (uint8_t)1, (uint8_t)1, (uint8_t)1, (uint8_t)1, (uint8_t)1, (uint8_t)1, (bool)0, (uint16_t)128);
+set_fmatrix((uint64_t)0x10080);
+img2colv2_cbuf_to_cb((__cb__ half*)0xaaaafe343db0, (__cbuf__ half*)0xe7ffd5483010, (uint16_t)16, (uint16_t)128, (uint16_t)0, (uint16_t)0, (uint8_t)1, (uint8_t)1, (uint8_t)1, (uint8_t)1, (uint8_t)1, (uint8_t)1, (bool)0, (uint16_t)16);
+set_flag((pipe_t)PIPE_MTE1, (pipe_t)PIPE_M, (event_t)0);
+wait_flag((pipe_t)PIPE_MTE1, (pipe_t)PIPE_M, (event_t)0);
+mad((__cc__ float*)0xe7ffd5424010, (__ca__ half*)0xaaaafe333da0, (__cb__ half*)0xaaaafe343db0, (uint16_t)103, (uint16_t)128, (uint16_t)16, (bool)0);
+pipe_barrier((pipe_t)PIPE_M);
+set_flag((pipe_t)PIPE_M, (pipe_t)PIPE_MTE1, (event_t)0);
+create_cbuf_matrix((__cbuf__ void*)0xe7ffd547a010, (int64_t)56, (half)0);
+pipe_barrier((pipe_t)PIPE_MTE2);
+copy_gm_to_cbuf((__cbuf__ void*)0xe7ffd547a010, (__gm__ void*)(((uint64_t)arg0) + 0x67300), (uint8_t)0, (uint16_t)103, (uint16_t)1, (uint16_t)31, (uint16_t)0, (pad_t)0);
+copy_gm_to_cbuf((__cbuf__ void*)0xe7ffd547ae10, (__gm__ void*)(((uint64_t)arg0) + 0x67320), (uint8_t)0, (uint16_t)103, (uint16_t)1, (uint16_t)31, (uint16_t)0, (pad_t)0);
+copy_gm_to_cbuf((__cbuf__ void*)0xe7ffd547bc10, (__gm__ void*)(((uint64_t)arg0) + 0x67340), (uint8_t)0, (uint16_t)103, (uint16_t)1, (uint16_t)31, (uint16_t)0, (pad_t)0);
+copy_gm_to_cbuf((__cbuf__ void*)0xe7ffd547ca10, (__gm__ void*)(((uint64_t)arg0) + 0x67360), (uint8_t)0, (uint16_t)103, (uint16_t)1, (uint16_t)31, (uint16_t)0, (pad_t)0);
+copy_gm_to_cbuf((__cbuf__ void*)0xe7ffd547d810, (__gm__ void*)(((uint64_t)arg0) + 0x67380), (uint8_t)0, (uint16_t)103, (uint16_t)1, (uint16_t)31, (uint16_t)0, (pad_t)0);
+copy_gm_to_cbuf((__cbuf__ void*)0xe7ffd547e610, (__gm__ void*)(((uint64_t)arg0) + 0x673a0), (uint8_t)0, (uint16_t)103, (uint16_t)1, (uint16_t)31, (uint16_t)0, (pad_t)0);
+copy_gm_to_cbuf((__cbuf__ void*)0xe7ffd547f410, (__gm__ void*)(((uint64_t)arg0) + 0x673c0), (uint8_t)0, (uint16_t)103, (uint16_t)1, (uint16_t)31, (uint16_t)0, (pad_t)0);
+copy_gm_to_cbuf((__cbuf__ void*)0xe7ffd5480210, (__gm__ void*)(((uint64_t)arg0) + 0x673e0), (uint8_t)0, (uint16_t)103, (uint16_t)1, (uint16_t)31, (uint16_t)0, (pad_t)0);
+#error "sff0 NO PROCESS RETURN VALUE"
+set_flag((pipe_t)PIPE_MTE2, (pipe_t)PIPE_MTE1, (event_t)0);
+wait_flag((pipe_t)PIPE_MTE2, (pipe_t)PIPE_MTE1, (event_t)0);
+#error "sff0 NO PROCESS RETURN VALUE"
+#error "sbitset1 NO PROCESS RETURN VALUE"
+set_flag((pipe_t)PIPE_MTE3, (pipe_t)PIPE_MTE1, (event_t)0);
+wait_flag((pipe_t)PIPE_MTE3, (pipe_t)PIPE_MTE1, (event_t)0);
+#error "sbitset0 NO PROCESS RETURN VALUE"
+copy_gm_to_cbuf((__cbuf__ void*)0xe7ffd5484010, (__gm__ void*)(((uint64_t)arg1) + 0x3000), (uint8_t)0, (uint16_t)128, (uint16_t)1, (uint16_t)0, (uint16_t)0, (pad_t)0);
+#error "sff0 NO PROCESS RETURN VALUE"
+set_flag((pipe_t)PIPE_MTE2, (pipe_t)PIPE_MTE1, (event_t)0);
+wait_flag((pipe_t)PIPE_MTE2, (pipe_t)PIPE_MTE1, (event_t)0);
+#error "sff0 NO PROCESS RETURN VALUE"
+#error "sbitset1 NO PROCESS RETURN VALUE"
+set_flag((pipe_t)PIPE_MTE3, (pipe_t)PIPE_MTE1, (event_t)0);
+wait_flag((pipe_t)PIPE_MTE3, (pipe_t)PIPE_MTE1, (event_t)0);
+#error "sbitset0 NO PROCESS RETURN VALUE"
+wait_flag((pipe_t)PIPE_M, (pipe_t)PIPE_MTE1, (event_t)1);
+set_fmatrix((uint64_t)0x10070);
+img2colv2_cbuf_to_ca((__ca__ half*)0xaaaafe33bda0, (__cbuf__ half*)0xe7ffd547a010, (uint16_t)128, (uint16_t)112, (uint16_t)0, (uint16_t)0, (uint8_t)1, (uint8_t)1, (uint8_t)1, (uint8_t)1, (uint8_t)1, (uint8_t)1, (bool)0, (uint16_t)128);
+set_fmatrix((uint64_t)0x10080);
+img2colv2_cbuf_to_cb((__cb__ half*)0xaaaafe34bdb0, (__cbuf__ half*)0xe7ffd5484010, (uint16_t)16, (uint16_t)128, (uint16_t)0, (uint16_t)0, (uint8_t)1, (uint8_t)1, (uint8_t)1, (uint8_t)1, (uint8_t)1, (uint8_t)1, (bool)0, (uint16_t)16);
+set_flag((pipe_t)PIPE_MTE1, (pipe_t)PIPE_M, (event_t)1);
+wait_flag((pipe_t)PIPE_MTE1, (pipe_t)PIPE_M, (event_t)1);
+mad((__cc__ float*)0xe7ffd5424010, (__ca__ half*)0xaaaafe33bda0, (__cb__ half*)0xaaaafe34bdb0, (uint16_t)103, (uint16_t)128, (uint16_t)16, (bool)0);
+pipe_barrier((pipe_t)PIPE_M);
+set_flag((pipe_t)PIPE_M, (pipe_t)PIPE_MTE1, (event_t)1);
+#error "sff0 NO PROCESS RETURN VALUE"
+#error "sbitset1 NO PROCESS RETURN VALUE"
+set_flag((pipe_t)PIPE_M, (pipe_t)PIPE_V, (event_t)0);
+wait_flag((pipe_t)PIPE_M, (pipe_t)PIPE_V, (event_t)0);
+#error "sbitset0 NO PROCESS RETURN VALUE"
+#error "sff0 NO PROCESS RETURN VALUE"
+set_flag((pipe_t)PIPE_MTE3, (pipe_t)PIPE_V, (event_t)0);
+wait_flag((pipe_t)PIPE_MTE3, (pipe_t)PIPE_V, (event_t)0);
+copy_matrix_cc_to_ubuf((__ubuf__ float*)0xe7ffd5566010, (__cc__ float*)0xe7ffd5424010, (uint8_t)0, (uint16_t)1, (uint16_t)7, (uint16_t)0, (uint16_t)0, (ConvRelu_t)0);
+#error "sff0 NO PROCESS RETURN VALUE"
+set_flag((pipe_t)PIPE_V, (pipe_t)PIPE_MTE3, (event_t)0);
+wait_flag((pipe_t)PIPE_V, (pipe_t)PIPE_MTE3, (event_t)0);
+#error "sff0 NO PROCESS RETURN VALUE"
+#error "sbitset1 NO PROCESS RETURN VALUE"
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x6700), (__ubuf__ void*)0xe7ffd5566010, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x6740), (__ubuf__ void*)0xe7ffd5566050, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x6780), (__ubuf__ void*)0xe7ffd5566090, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x67c0), (__ubuf__ void*)0xe7ffd55660d0, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x6800), (__ubuf__ void*)0xe7ffd5566110, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x6840), (__ubuf__ void*)0xe7ffd5566150, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x6880), (__ubuf__ void*)0xe7ffd5566190, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x68c0), (__ubuf__ void*)0xe7ffd55661d0, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x6900), (__ubuf__ void*)0xe7ffd5566210, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x6940), (__ubuf__ void*)0xe7ffd5566250, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x6980), (__ubuf__ void*)0xe7ffd5566290, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x69c0), (__ubuf__ void*)0xe7ffd55662d0, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x6a00), (__ubuf__ void*)0xe7ffd5566310, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x6a40), (__ubuf__ void*)0xe7ffd5566350, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x6a80), (__ubuf__ void*)0xe7ffd5566390, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x6ac0), (__ubuf__ void*)0xe7ffd55663d0, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x6b00), (__ubuf__ void*)0xe7ffd5566410, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x6b40), (__ubuf__ void*)0xe7ffd5566450, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x6b80), (__ubuf__ void*)0xe7ffd5566490, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x6bc0), (__ubuf__ void*)0xe7ffd55664d0, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x6c00), (__ubuf__ void*)0xe7ffd5566510, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x6c40), (__ubuf__ void*)0xe7ffd5566550, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x6c80), (__ubuf__ void*)0xe7ffd5566590, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x6cc0), (__ubuf__ void*)0xe7ffd55665d0, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x6d00), (__ubuf__ void*)0xe7ffd5566610, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x6d40), (__ubuf__ void*)0xe7ffd5566650, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x6d80), (__ubuf__ void*)0xe7ffd5566690, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x6dc0), (__ubuf__ void*)0xe7ffd55666d0, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x6e00), (__ubuf__ void*)0xe7ffd5566710, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x6e40), (__ubuf__ void*)0xe7ffd5566750, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x6e80), (__ubuf__ void*)0xe7ffd5566790, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x6ec0), (__ubuf__ void*)0xe7ffd55667d0, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x6f00), (__ubuf__ void*)0xe7ffd5566810, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x6f40), (__ubuf__ void*)0xe7ffd5566850, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x6f80), (__ubuf__ void*)0xe7ffd5566890, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x6fc0), (__ubuf__ void*)0xe7ffd55668d0, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x7000), (__ubuf__ void*)0xe7ffd5566910, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x7040), (__ubuf__ void*)0xe7ffd5566950, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x7080), (__ubuf__ void*)0xe7ffd5566990, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x70c0), (__ubuf__ void*)0xe7ffd55669d0, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x7100), (__ubuf__ void*)0xe7ffd5566a10, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x7140), (__ubuf__ void*)0xe7ffd5566a50, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x7180), (__ubuf__ void*)0xe7ffd5566a90, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x71c0), (__ubuf__ void*)0xe7ffd5566ad0, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x7200), (__ubuf__ void*)0xe7ffd5566b10, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x7240), (__ubuf__ void*)0xe7ffd5566b50, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x7280), (__ubuf__ void*)0xe7ffd5566b90, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x72c0), (__ubuf__ void*)0xe7ffd5566bd0, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x7300), (__ubuf__ void*)0xe7ffd5566c10, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x7340), (__ubuf__ void*)0xe7ffd5566c50, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x7380), (__ubuf__ void*)0xe7ffd5566c90, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x73c0), (__ubuf__ void*)0xe7ffd5566cd0, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x7400), (__ubuf__ void*)0xe7ffd5566d10, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x7440), (__ubuf__ void*)0xe7ffd5566d50, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x7480), (__ubuf__ void*)0xe7ffd5566d90, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x74c0), (__ubuf__ void*)0xe7ffd5566dd0, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x7500), (__ubuf__ void*)0xe7ffd5566e10, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x7540), (__ubuf__ void*)0xe7ffd5566e50, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x7580), (__ubuf__ void*)0xe7ffd5566e90, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x75c0), (__ubuf__ void*)0xe7ffd5566ed0, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x7600), (__ubuf__ void*)0xe7ffd5566f10, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x7640), (__ubuf__ void*)0xe7ffd5566f50, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x7680), (__ubuf__ void*)0xe7ffd5566f90, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x76c0), (__ubuf__ void*)0xe7ffd5566fd0, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x7700), (__ubuf__ void*)0xe7ffd5567010, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x7740), (__ubuf__ void*)0xe7ffd5567050, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x7780), (__ubuf__ void*)0xe7ffd5567090, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x77c0), (__ubuf__ void*)0xe7ffd55670d0, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x7800), (__ubuf__ void*)0xe7ffd5567110, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x7840), (__ubuf__ void*)0xe7ffd5567150, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x7880), (__ubuf__ void*)0xe7ffd5567190, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x78c0), (__ubuf__ void*)0xe7ffd55671d0, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x7900), (__ubuf__ void*)0xe7ffd5567210, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x7940), (__ubuf__ void*)0xe7ffd5567250, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x7980), (__ubuf__ void*)0xe7ffd5567290, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x79c0), (__ubuf__ void*)0xe7ffd55672d0, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x7a00), (__ubuf__ void*)0xe7ffd5567310, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x7a40), (__ubuf__ void*)0xe7ffd5567350, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x7a80), (__ubuf__ void*)0xe7ffd5567390, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x7ac0), (__ubuf__ void*)0xe7ffd55673d0, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x7b00), (__ubuf__ void*)0xe7ffd5567410, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x7b40), (__ubuf__ void*)0xe7ffd5567450, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x7b80), (__ubuf__ void*)0xe7ffd5567490, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x7bc0), (__ubuf__ void*)0xe7ffd55674d0, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x7c00), (__ubuf__ void*)0xe7ffd5567510, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x7c40), (__ubuf__ void*)0xe7ffd5567550, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x7c80), (__ubuf__ void*)0xe7ffd5567590, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x7cc0), (__ubuf__ void*)0xe7ffd55675d0, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x7d00), (__ubuf__ void*)0xe7ffd5567610, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x7d40), (__ubuf__ void*)0xe7ffd5567650, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x7d80), (__ubuf__ void*)0xe7ffd5567690, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x7dc0), (__ubuf__ void*)0xe7ffd55676d0, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x7e00), (__ubuf__ void*)0xe7ffd5567710, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x7e40), (__ubuf__ void*)0xe7ffd5567750, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x7e80), (__ubuf__ void*)0xe7ffd5567790, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x7ec0), (__ubuf__ void*)0xe7ffd55677d0, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x7f00), (__ubuf__ void*)0xe7ffd5567810, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x7f40), (__ubuf__ void*)0xe7ffd5567850, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x7f80), (__ubuf__ void*)0xe7ffd5567890, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x7fc0), (__ubuf__ void*)0xe7ffd55678d0, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x8000), (__ubuf__ void*)0xe7ffd5567910, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x8040), (__ubuf__ void*)0xe7ffd5567950, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+copy_ubuf_to_gm((__gm__ void*)(((uint64_t)arg2) + 0x8080), (__ubuf__ void*)0xe7ffd5567990, (uint8_t)0, (uint16_t)1, (uint16_t)2, (uint16_t)222, (uint16_t)0);
+#error "sff0 NO PROCESS RETURN VALUE"
+set_flag((pipe_t)PIPE_MTE3, (pipe_t)PIPE_V, (event_t)0);
+wait_flag((pipe_t)PIPE_MTE3, (pipe_t)PIPE_V, (event_t)0);
+#error "sbitset0 NO PROCESS RETURN VALUE"
+#error "sff0 NO PROCESS RETURN VALUE"
+#error "sbitset1 NO PROCESS RETURN VALUE"
+set_flag((pipe_t)PIPE_V, (pipe_t)PIPE_M, (event_t)0);
+#error "sff0 NO PROCESS RETURN VALUE"
+set_flag((pipe_t)PIPE_MTE3, (pipe_t)PIPE_MTE2, (event_t)0);
+wait_flag((pipe_t)PIPE_MTE3, (pipe_t)PIPE_MTE2, (event_t)0);
+#error "sff0 NO PROCESS RETURN VALUE"
+#error "sbitset1 NO PROCESS RETURN VALUE"
+set_flag((pipe_t)PIPE_MTE1, (pipe_t)PIPE_MTE3, (event_t)0);
+#error "sff0 NO PROCESS RETURN VALUE"
+#error "sbitset1 NO PROCESS RETURN VALUE"
+set_flag((pipe_t)PIPE_MTE1, (pipe_t)PIPE_MTE3, (event_t)1);
+wait_flag((pipe_t)PIPE_MTE1, (pipe_t)PIPE_MTE3, (event_t)0);
+#error "sbitset0 NO PROCESS RETURN VALUE"
+wait_flag((pipe_t)PIPE_MTE1, (pipe_t)PIPE_MTE3, (event_t)1);
+#error "sbitset0 NO PROCESS RETURN VALUE"
+wait_flag((pipe_t)PIPE_V, (pipe_t)PIPE_M, (event_t)0);
+#error "sbitset0 NO PROCESS RETURN VALUE"
+wait_flag((pipe_t)PIPE_M, (pipe_t)PIPE_MTE1, (event_t)0);
+wait_flag((pipe_t)PIPE_M, (pipe_t)PIPE_MTE1, (event_t)1);
+#error "sbitset0 NO PROCESS RETURN VALUE"
+#error "sbitset0 NO PROCESS RETURN VALUE"
+pipe_barrier((pipe_t)PIPE_ALL);
+}

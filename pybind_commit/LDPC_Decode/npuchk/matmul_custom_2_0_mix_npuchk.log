@@ -1,0 +1,115 @@
+
+### set_ffts_base_addr((uint64_t)255086336992928);
+
+[set_ffts_base_addr] unsupported
+[S] [RECV_INST] set_ffts_base_addr type 7
+[S] [EXECUTE] set_ffts_base_addr type 7
+[ALL] [TBUF_EVENT] ABS_ADDR 0xe7ffe40dc010 0x40000 B type L1
+[ALL] [TBUF_STAT] ---------- tbuf used stat ----------
+[ALL] [TBUF_STAT] ---------- tbuf used stat ----------
+[ALL] [TBUF_STAT] ---------- tbuf init stat ----------
+[ALL] [TBUF_STAT] ---------- tbuf init stat ----------
+[ALL] [TBUF_EVENT] ABS_ADDR 0xe7ffe3fdb010 0x100000 B type L0A
+[ALL] [TBUF_STAT] ---------- tbuf used stat ----------
+[ALL] [TBUF_STAT] ---------- tbuf used stat ----------
+[ALL] [TBUF_STAT] ---------- tbuf init stat ----------
+[ALL] [TBUF_STAT] ---------- tbuf init stat ----------
+[ALL] [TBUF_EVENT] ABS_ADDR 0xaaaabdb18a60 0x10000 B type L1
+[ALL] [TBUF_STAT] ---------- tbuf used stat ----------
+[ALL] [TBUF_STAT] ---------- tbuf used stat ----------
+[ALL] [TBUF_STAT] ---------- tbuf init stat ----------
+[ALL] [TBUF_STAT] ---------- tbuf init stat ----------
+[ALL] [TBUF_EVENT] ABS_ADDR 0xaaaabdb28a70 0x10000 B type L0B
+[ALL] [TBUF_STAT] ---------- tbuf used stat ----------
+[ALL] [TBUF_STAT] ---------- tbuf used stat ----------
+[ALL] [TBUF_STAT] ---------- tbuf init stat ----------
+[ALL] [TBUF_STAT] ---------- tbuf init stat ----------
+[ALL] [TBUF_EVENT] ABS_ADDR 0xe7ffe3f9a010 0x40000 B type UB
+[ALL] [TBUF_STAT] ---------- tbuf used stat ----------
+[ALL] [TBUF_STAT] ---------- tbuf used stat ----------
+[ALL] [TBUF_STAT] ---------- tbuf init stat ----------
+[ALL] [TBUF_STAT] ---------- tbuf init stat ----------
+[ALL] [TBUF_EVENT] ABS_ADDR 0xaaaabdb38a80 0x10000 B type L0C
+[ALL] [TBUF_STAT] ---------- tbuf used stat ----------
+[ALL] [TBUF_STAT] ---------- tbuf used stat ----------
+[ALL] [TBUF_STAT] ---------- tbuf init stat ----------
+[ALL] [TBUF_STAT] ---------- tbuf init stat ----------
+[ALL] [TBUF_EVENT] ABS_ADDR 0xaaaabdb48a90 0x10000 B type L0C
+[ALL] [TBUF_STAT] ---------- tbuf used stat ----------
+[ALL] [TBUF_STAT] ---------- tbuf used stat ----------
+[ALL] [TBUF_STAT] ---------- tbuf init stat ----------
+[ALL] [TBUF_STAT] ---------- tbuf init stat ----------
+[ALL] [TBUF_EVENT] PERSISTENT 0xe7ffe3fdb010 0x460 B type UB
+[ALL] [TBUF_STAT] ---------- tbuf used stat ----------
+    UB USED: 0x460, Rate: 0.427246%
+[ALL] [TBUF_STAT] ---------- tbuf used stat ----------
+[ALL] [TBUF_STAT] ---------- tbuf init stat ----------
+[ALL] [TBUF_STAT] ---------- tbuf init stat ----------
+[ALL] [TBUF_EVENT] ALLOC 0xe7ffe3fdb010 0x230 B type UB
+[ALL] [TBUF_STAT] ---------- tbuf used stat ----------
+    UB USED: 0x690, Rate: 0.640869%
+[ALL] [TBUF_STAT] ---------- tbuf used stat ----------
+[ALL] [TBUF_STAT] ---------- tbuf init stat ----------
+[ALL] [TBUF_STAT] ---------- tbuf init stat ----------
+[ALL] [TBUF_EVENT] PERSISTENT 0xaaaabdb18a60 0x10000 B type L0A
+[ALL] [TBUF_STAT] ---------- tbuf used stat ----------
+    UB USED: 0x690, Rate: 0.640869%
+    L0A USED: 0x10000, Rate: 100%
+[ALL] [TBUF_STAT] ---------- tbuf used stat ----------
+[ALL] [TBUF_STAT] ---------- tbuf init stat ----------
+[ALL] [TBUF_STAT] ---------- tbuf init stat ----------
+[MEMCHEK][InitMemRecord]add addr: 187650303691360len: 65536
+[ALL] [TBUF_EVENT] PERSISTENT 0xaaaabdb28a70 0x10000 B type L0B
+[ALL] [TBUF_STAT] ---------- tbuf used stat ----------
+    UB USED: 0x690, Rate: 0.640869%
+    L0A USED: 0x10000, Rate: 100%
+    L0B USED: 0x10000, Rate: 100%
+[ALL] [TBUF_STAT] ---------- tbuf used stat ----------
+[ALL] [TBUF_STAT] ---------- tbuf init stat ----------
+[ALL] [TBUF_STAT] ---------- tbuf init stat ----------
+[MEMCHEK][InitMemRecord]add addr: 187650303756912len: 65536
+
+### set_flag((pipe_t)PIPE_M, (pipe_t)PIPE_MTE1, (event_t)0);
+
+[M] [RECV_INST] set_flag type 3
+[M] [EXECUTE] set_flag type 3
+[M] [send event] on set_flag 2 3 0
+[MTE1] [RECV_EVENT] SRC M DST MTE1 EVENT 0
+
+### set_flag((pipe_t)PIPE_M, (pipe_t)PIPE_MTE1, (event_t)1);
+
+[M] [RECV_INST] set_flag type 3
+[M] [EXECUTE] set_flag type 3
+[M] [send event] on set_flag 2 3 1
+[MTE1] [RECV_EVENT] SRC M DST MTE1 EVENT 1
+[ALL] [TBUF_EVENT] INIT 0xe7ffe3fdb470 0x700 B type L1
+[ALL] [TBUF_STAT] ---------- tbuf used stat ----------
+    UB USED: 0x690, Rate: 0.640869%
+    L0A USED: 0x10000, Rate: 100%
+    L0B USED: 0x10000, Rate: 100%
+[ALL] [TBUF_STAT] ---------- tbuf used stat ----------
+[ALL] [TBUF_STAT] ---------- tbuf init stat ----------
+    L1 USED: 0x700, Rate: 0.170898%
+[ALL] [TBUF_STAT] ---------- tbuf init stat ----------
+[MEMCHEK][InitMemRecord]add addr: 255086227731568len: 1792
+[ALL] [TBUF_EVENT] INIT 0xe7ffe3fdbb70 0x31000 B type L1
+[ALL] [TBUF_STAT] ---------- tbuf used stat ----------
+    UB USED: 0x690, Rate: 0.640869%
+    L0A USED: 0x10000, Rate: 100%
+    L0B USED: 0x10000, Rate: 100%
+[ALL] [TBUF_STAT] ---------- tbuf used stat ----------
+[ALL] [TBUF_STAT] ---------- tbuf init stat ----------
+    L1 USED: 0x31700, Rate: 19.3115%
+[ALL] [TBUF_STAT] ---------- tbuf init stat ----------
+[MEMCHEK][InitMemRecord]add addr: 255086227733360len: 200704
+[ALL] [TBUF_EVENT] INIT 0xe7ffe3f9a010 0x1c00 B type L0C
+[ALL] [TBUF_STAT] ---------- tbuf used stat ----------
+    UB USED: 0x690, Rate: 0.640869%
+    L0A USED: 0x10000, Rate: 100%
+    L0B USED: 0x10000, Rate: 100%
+[ALL] [TBUF_STAT] ---------- tbuf used stat ----------
+[ALL] [TBUF_STAT] ---------- tbuf init stat ----------
+    L1 USED: 0x31700, Rate: 19.3115%
+    L0C USED: 0x1c00, Rate: 2.73438%
+[ALL] [TBUF_STAT] ---------- tbuf init stat ----------
+[MEMCHEK][InitMemRecord]add addr: 255086227464208len: 7168

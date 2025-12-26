@@ -1,0 +1,3 @@
+extern "C" __global__ [aicore] void qam_demapper(__gm__ uint8_t* __restrict__ arg0, __gm__ uint8_t* __restrict__ arg1, __gm__ uint8_t* __restrict__ arg2) {
+set_ffts_base_addr((uint64_t)0x75eaf93136a0);
+set_atomic_none();
